@@ -2,7 +2,7 @@ import React from 'react';
 export default function Header(props){
     return(
         <div style= {{
-            backgroundColor:"pink",
+            backgroundColor:"cornflowerblue",
         display:"flex", 
         justifyContent:"space-between", 
         alignItems:"center", 
