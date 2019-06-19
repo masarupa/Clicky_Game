@@ -111,27 +111,43 @@ function App() {
   }, []);
 
   return (
-    <div> 
-    <Header
-    score= {score}
-    newScore= {newScore}
-    />
-    <div className="container">
-    <div className="row">
-      {images.map(image => {
-        let imageUrl;
-        if (image.visible === false) {
-          imageUrl = noImageIcon;
-        } else {
-          imageUrl = image.src;
-        }
-        return <img src={imageUrl} width="200" height="200" style={{margin:10}}
-        className= "col-md-3" onClick={e => handleClick (e, image.id)} />;
-         
-    })}
+    <div>
+      <Header
+        score={score}
+        newScore={newScore}
+      />
+      <div 
+        className="container" 
+        style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center',
+          backgroundColor:'lightgray',
+          padding: 10
+          }}>
+        <div className="row"
+        style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center',
+          padding: 10
+          }}
+        >
+          {images.map(image => {
+            let imageUrl;
+            if (image.visible === false) {
+              imageUrl = noImageIcon;
+            } else {
+              imageUrl = image.src;
+            }
+            return <img src={imageUrl} width="200" height="200" style={{ margin: 10 }}
+              className="col-md-3" onClick={e => handleClick(e, image.id)} />;
+
+          })}
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
+  
   );
 }
 
